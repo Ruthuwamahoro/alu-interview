@@ -1,21 +1,19 @@
 #!/usr/bin/python3
 """Minimum operations"""
 
+import math
 
 def minOperations(n):
     if n <= 1:
         return 0
 
     operations = 0
-    divisor = 2  # Start with the smallest prime divisor
-
-    while divisor <= math.sqrt(n):
-        while n % divisor == 0:
-            operations += divisor
-            n //= divisor
-        divisor += 1
+    for i in range(2, int(math.sqrt(abs(n))) + 1):
+        while n % i == 0:
+            operations += i
+            n //= i
 
     if n > 1:
         operations += n
 
-    return operations    
+    return operations
