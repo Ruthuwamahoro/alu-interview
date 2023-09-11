@@ -6,13 +6,16 @@ def minOperations(n):
     if n <= 1:
         return 0
 
-    # Create a list to store the minimum operations needed for each number from 0 to n
-    operations = [0] * (n + 1)
+    operations = 0
+    divisor = 2  # Start with the smallest prime divisor
 
-    for i in range(2, n + 1):
-        operations[i] = float('inf')  # Initialize with positive infinity
-        for j in range(1, i // 2 + 1):
-            if i % j == 0:
-                operations[i] = min(operations[i], operations[j] + i // j)
-    
-    return operations[n] if operations[n] != float('inf') else 0
+    while divisor <= math.sqrt(n):
+        while n % divisor == 0:
+            operations += divisor
+            n //= divisor
+        divisor += 1
+
+    if n > 1:
+        operations += n
+
+    return operations    
