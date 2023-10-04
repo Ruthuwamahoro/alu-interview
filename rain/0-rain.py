@@ -3,6 +3,7 @@
 0-rain
 """
 
+
 def rain(walls):
     """python module"""
     if not walls:
@@ -29,9 +30,10 @@ def rain(walls):
 
     return water
 
+
 # Test cases
 if __name__ == "__main__":
     walls1 = [0, 1, 0, 2, 0, 3, 0, 4]
     walls2 = [2, 0, 0, 4, 0, 0, 1, 0]
-    print(rain(walls1))  # Output: 6
-    print(rain(walls2))  # Output: 6
+    print(rain(walls1))  
+    print(rain(walls2)) 
