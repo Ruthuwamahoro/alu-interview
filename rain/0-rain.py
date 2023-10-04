@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+0-rain
+"""
+
+
+
 def rain(walls):
     """python module"""
     if not walls:
